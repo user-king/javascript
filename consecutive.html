@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        var arr = [1,0,1,1,1,1,1,0,1,0,1,1,1,0,1];
+        var consecutive = (arr = []) => {
+            var left = 0;
+            var right = 0;
+            var max = 0;
+            while (right < arr.length) {
+                if (arr[right] === 0) {
+                    if (right - left > max) {
+                        max = right - left
+                    }
+                    right++;
+                    left = right;
+                } else {
+                    right++
+                }
+            }
+        return right - left > max ? right - left : max;
+        }
+        document.write(consecutive(arr));
+    </script>
+</html>

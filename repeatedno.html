@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        const items2 = [1,2,3,3,4,5]
+
+        function find_duplicate_in_array(array){
+        const count = {}
+        const result = []
+
+        array.forEach(item => {
+            if (count[item]) {
+            count[item] +=1
+            return
+            }
+            count[item] = 1
+        })
+
+        for (let prop in count){
+            if (count[prop] >=2){
+                result.push(prop)
+            }
+        }
+
+        document.write(count)
+        return result;
+
+        }
+
+        find_duplicate_in_array(items2)
+
+    </script>
+</html>

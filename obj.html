@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+    var obj = {
+        "id" : 4, "name" : "abc",
+        "id" : 10, "name" : "ab2",
+        "id" : 5, "name" : "abc3",
+        "id" : 6, "name" : "abc5"
+    };
+
+    // var obj = { 
+    //     "223": {"name": "wilco", "title": "bar"},
+    //     "322": {"name": "enola", "title": "baz"},
+    //     "135": {"name": "marco", "title": "foo"}
+    // };
+
+    var arr = [];
+    for(var i in obj) {
+        var o = {};
+        if(obj.hasOwnProperty(i)) {
+        o.id = obj[i].id;   
+        o.name = obj[i].name;
+        arr.push(o); 
+        }        
+    } 
+    arr.sort(function (a,b) {
+    a.id - b.id;
+    });
+    document.write(arr);
+       
+</script>
+</html>

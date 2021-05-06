@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/form-validation.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+<body>
+    <form action="" name="myform">
+
+        <label>firstname : </label>
+        <input type="text" name="firstname" required><br>
+
+        <label>checkbox : </label>
+        <input type="checkbox" name="checkme" value="check" required><br><br>
+        
+        <button type="submit" value="submit" >submit</button>
+    
+    </form>
+</body>
+
+<script>
+
+    $(function() {
+        $("form[name='myform']").validate({
+            rules: {
+                firstname: "required",
+                checkme: "required"
+            
+            },
+       
+            messages: {
+                firstname: "Please fill out this field.",
+                checkme: "Please check this box if you want to proceed."
+            },
+
+            submitHandler: function(form) {
+            form.submit();
+            }
+        });
+    });
+
+  </script>
+</html>
